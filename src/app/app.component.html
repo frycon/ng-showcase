@@ -1,26 +1,28 @@
-<div style="text-align:center">
-    <h1>
-        {{ title }}!
-    </h1>
+<div class="container">
+    <div style="text-align:center">
+        <h1>
+            {{ title }}!
+        </h1>
+    </div>
+    <h2>Data binding examples: </h2>
+    <section>
+        <article>
+            <h3>Two way data binding using getters and setters</h3>
+            <input type="text" [(ngModel)]="twoWayGettersAndSetters" />
+            <p>{{twoWayGettersAndSettersInternal}}</p>
+        </article>
+        <br>
+        <article>
+            <h3>Manual two way data binding using getters and setters</h3>
+            <input type="text" [ngModel]="manualTwoWayGettersAndSetters" (ngModelChange)="manualTwoWayGettersAndSetters = $event" />
+            <p>{{manualTwoWayGettersAndSettersInternal}}</p>
+        </article>
+        <br>
+        <article>
+            <h3>Manual two way property binding using functions</h3>
+            <input type="text" [value]="propertyBindingRead()" (input)="propertyBindingWrite($event)" />
+            <p>{{propertyBindingInternal}}</p>
+        </article>
+        <br>
+    </section>
 </div>
-<h2>Data binding examples: </h2>
-<section>
-    <article>
-        <h3>Two way data binding using getters and setters</h3>
-        <input type="text" [(ngModel)]="twoWayGettersAndSetters" />
-        <p>{{twoWayGettersAndSettersInternal}}</p>
-    </article>
-    <br>
-    <article>
-        <h3>Manual two way data binding using getters and setters</h3>
-        <input type="text" [ngModel]="manualTwoWayGettersAndSetters" (ngModelChange)="manualTwoWayGettersAndSetters = $event" />
-        <p>{{manualTwoWayGettersAndSettersInternal}}</p>
-    </article>
-    <br>
-    <article>
-        <h3>Manual two way property binding using functions</h3>
-        <input type="text" [value]="propertyBindingRead()" (input)="propertyBindingWrite($event)" />
-        <p>{{propertyBindingInternal}}</p>
-    </article>
-    <br>
-</section>
